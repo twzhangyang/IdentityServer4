@@ -11,29 +11,47 @@ namespace IdentityServer.Samples.ClientCredential.Server
 {
     public class Startup
     {
-        // This method gets called by the runtime. Use this method to add services to the container.
-        // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services)
+        public IHostingEnvironment Environment { get; }
+
+        public Startup(IHostingEnvironment environment)
         {
-            services.AddMvcCore()
-                .AddAuthorization()
-                .AddJsonFormatters();
-
-            services.AddAuthentication("Bearer")
-                .AddJwtBearer("Bearer", options =>
-                {
-                    options.Authority = "http://localhost:5000";
-                    options.RequireHttpsMetadata = false;
-
-                    options.Audience = "api1";
-                });
+            Environment = environment;
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void ConfigureServices(IServiceCollection services)
         {
-            app.UseAuthentication();
-            app.UseMvc();
+            // uncomment, if you wan to add an MVC-based UI
+            //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_2_1);
+
+            var builder = services.AddIdentityServer()
+                .AddInMemoryIdentityResources(Config.GetIdentityResources())
+                .AddInMemoryApiResources(Config.GetApis())
+                .AddInMemoryClients(Config.GetClients());
+
+            if (Environment.IsDevelopment())
+            {
+                builder.AddDeveloperSigningCredential();
+            }
+            else
+            {
+                throw new Exception("need to configure key material");
+            }
+        }
+
+        public void Configure(IApplicationBuilder app)
+        {
+            if (Environment.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+
+            // uncomment if you want to support static files
+            //app.UseStaticFiles();
+
+            app.UseIdentityServer();
+
+            // uncomment, if you wan to add an MVC-based UI
+            //app.UseMvcWithDefaultRoute();
         }
     }
 }
