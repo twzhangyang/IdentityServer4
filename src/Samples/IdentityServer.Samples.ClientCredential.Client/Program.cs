@@ -20,7 +20,7 @@ namespace IdentityServer.Samples.ClientCredential.Client
                 return;
             }
 
-            // request token
+            // request token8
             var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
             {
                 Address = disco.TokenEndpoint,
@@ -43,7 +43,7 @@ namespace IdentityServer.Samples.ClientCredential.Client
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync("http://localhost:6025/identity");
+            var response = await apiClient.GetAsync("http://localhost:6024/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
