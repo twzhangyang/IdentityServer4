@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Cache;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServer.Samples.ClientCredential.Server
@@ -36,6 +39,11 @@ namespace IdentityServer.Samples.ClientCredential.Server
             {
                 throw new Exception("need to configure key material");
             }
+            
+            var cacheEntryOptions = new MemoryCacheEntryOptions()
+                // Keep in cache for this time, reset time if accessed.
+                .SetSlidingExpiration(TimeSpan.FromSeconds(3));
+
         }
 
         public void Configure(IApplicationBuilder app)
