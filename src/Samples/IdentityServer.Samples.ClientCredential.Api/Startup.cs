@@ -24,32 +24,32 @@ namespace IdentityServer.Samples.ClientCredential.Api
                 .AddAuthorization()
                 .AddJsonFormatters();
 
-//            services.AddAuthentication("Bearer")
-//                .AddJwtBearer("Bearer", options =>
-//                {
-//                    options.Authority = "http://localhost:5000";
-//                    options.RequireHttpsMetadata = false;
-//
-//                    options.Audience = "api1";
-//                });
-
-            var securityKey = "this is our supper security key";
-            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
-
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
+            services.AddAuthentication("Bearer")
+                .AddJwtBearer("Bearer", options =>
                 {
-                    options.TokenValidationParameters = new TokenValidationParameters
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateIssuerSigningKey = true,
+                    options.Authority = "http://localhost:40010";
+                    options.RequireHttpsMetadata = false;
 
-                        ValidIssuer = "yang",
-                        ValidAudience = "readers",
-                        IssuerSigningKey = symmetricSecurityKey
-                    };
+                    options.Audience = "api1";
                 });
+
+//            var securityKey = "this is our supper security key";
+//            var symmetricSecurityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(securityKey));
+//
+//            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+//                .AddJwtBearer(options =>
+//                {
+//                    options.TokenValidationParameters = new TokenValidationParameters
+//                    {
+//                        ValidateIssuer = true,
+//                        ValidateAudience = true,
+//                        ValidateIssuerSigningKey = true,
+//
+//                        ValidIssuer = "yang",
+//                        ValidAudience = "readers",
+//                        IssuerSigningKey = symmetricSecurityKey
+//                    };
+//                });
         }
 
         public void Configure(IApplicationBuilder app)

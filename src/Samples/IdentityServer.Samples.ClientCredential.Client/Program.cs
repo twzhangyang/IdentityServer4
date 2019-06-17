@@ -13,7 +13,7 @@ namespace IdentityServer.Samples.ClientCredential.Client
             // discover endpoints from metadata
             var client = new HttpClient();
 
-            var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
+            var disco = await client.GetDiscoveryDocumentAsync("http://localhost:40010");
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
@@ -43,7 +43,7 @@ namespace IdentityServer.Samples.ClientCredential.Client
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync("http://localhost:6024/identity");
+            var response = await apiClient.GetAsync("http://localhost:40000/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
@@ -53,6 +53,8 @@ namespace IdentityServer.Samples.ClientCredential.Client
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
+
+            Console.ReadKey();
         }
     }
 }

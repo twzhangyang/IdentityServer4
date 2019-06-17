@@ -20,7 +20,7 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Api
             services.AddAuthentication("Bearer")
                 .AddJwtBearer("Bearer", options =>
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "http://localhost:40110";
                     options.RequireHttpsMetadata = false;
 
                     options.Audience = "api2";

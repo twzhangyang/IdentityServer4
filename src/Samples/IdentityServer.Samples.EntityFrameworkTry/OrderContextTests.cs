@@ -59,14 +59,14 @@ namespace IdentityServer.Samples.EntityFrameworkTry
                 context.SaveChanges();
             }
         }
-        
+
         [Fact]
         public void AddOrderDetail2()
         {
             using (var context = new OrderContext())
             {
                 var order = context.Orders.First();
-                
+
                 var orderDetail = new OrderDetail()
                 {
                     OrderID = order.OrderID,
@@ -78,17 +78,17 @@ namespace IdentityServer.Samples.EntityFrameworkTry
                 context.SaveChanges();
             }
         }
-        
+
         [Fact]
         public void QueryOrderDetail()
         {
             using (var context = new OrderContext())
             {
                 var order = context.Orders
-                    .Include(x=>x.OrderDetails)
+                    .Include(x => x.OrderDetails)
                     .First(x => x.CustomerID == 6);
                 var id = order.OrderID;
-            } 
+            }
         }
     }
 }

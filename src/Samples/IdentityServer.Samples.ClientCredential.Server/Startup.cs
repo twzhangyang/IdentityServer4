@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net.Cache;
 using System.Net.Http;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -33,17 +35,35 @@ namespace IdentityServer.Samples.ClientCredential.Server
 
             if (Environment.IsDevelopment())
             {
-                builder.AddDeveloperSigningCredential();
+                LoadCert(builder);
+
+             //   builder.AddDeveloperSigningCredential();
             }
             else
             {
-                throw new Exception("need to configure key material");
+                LoadCert(builder);
             }
             
             var cacheEntryOptions = new MemoryCacheEntryOptions()
                 // Keep in cache for this time, reset time if accessed.
                 .SetSlidingExpiration(TimeSpan.FromSeconds(3));
 
+        }
+
+        private void LoadCert(IIdentityServerBuilder builder)
+        {
+//            var fileName = Path.Combine(Directory.GetCurrentDirectory(), "example.pfx");
+            var fileName = Path.Combine(Directory.GetCurrentDirectory(), "jedis-test-auth.pfx");
+
+            if (!File.Exists(fileName))
+            {
+                throw new FileNotFoundException("Signing Certificate is missing!");
+            }
+
+//            var cert = new X509Certificate2(fileName, "Password1");
+            var cert = new X509Certificate2(fileName, "123");
+
+            builder.AddSigningCredential(cert);
         }
 
         public void Configure(IApplicationBuilder app)

@@ -31,6 +31,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntifyFramework", "EntifyFr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.EntityFrameworkTry", "Samples\IdentityServer.Samples.EntityFrameworkTry\IdentityServer.Samples.EntityFrameworkTry.csproj", "{093D6FE8-0F36-448B-B40D-DC7484492612}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HybridFlow", "HybridFlow", "{4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.HybridFlow.Api", "Samples\IdentityServer.Samples.HybridFlow.Api\IdentityServer.Samples.HybridFlow.Api.csproj", "{3EC38586-023D-46B0-96BC-9E952C3D0245}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.HybridFlow.IdentityServer", "Samples\IdentityServer.Samples.HybridFlow.IdentityServer\IdentityServer.Samples.HybridFlow.IdentityServer.csproj", "{664D6ABE-637C-4347-8A89-90F3BB1E023A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.HybridFlow.MvcClient", "Samples\IdentityServer.Samples.HybridFlow.MvcClient\IdentityServer.Samples.HybridFlow.MvcClient.csproj", "{6E550B5A-E9A7-454C-8218-B536FABEB503}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +85,18 @@ Global
 		{093D6FE8-0F36-448B-B40D-DC7484492612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{093D6FE8-0F36-448B-B40D-DC7484492612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{093D6FE8-0F36-448B-B40D-DC7484492612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EC38586-023D-46B0-96BC-9E952C3D0245}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EC38586-023D-46B0-96BC-9E952C3D0245}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EC38586-023D-46B0-96BC-9E952C3D0245}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EC38586-023D-46B0-96BC-9E952C3D0245}.Release|Any CPU.Build.0 = Release|Any CPU
+		{664D6ABE-637C-4347-8A89-90F3BB1E023A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{664D6ABE-637C-4347-8A89-90F3BB1E023A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{664D6ABE-637C-4347-8A89-90F3BB1E023A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{664D6ABE-637C-4347-8A89-90F3BB1E023A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -95,5 +115,9 @@ Global
 		{52379865-F52F-483F-96A4-DCE0C75697A7} = {BD9833C7-3B1D-49AD-BCE0-B4C827411ADF}
 		{1F60D497-02B3-4A07-946B-98C3688F32C8} = {E8E3BE68-208F-4C59-9A7D-C63FF3A509FC}
 		{093D6FE8-0F36-448B-B40D-DC7484492612} = {1F60D497-02B3-4A07-946B-98C3688F32C8}
+		{4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A} = {E8E3BE68-208F-4C59-9A7D-C63FF3A509FC}
+		{3EC38586-023D-46B0-96BC-9E952C3D0245} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
+		{664D6ABE-637C-4347-8A89-90F3BB1E023A} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
+		{6E550B5A-E9A7-454C-8218-B536FABEB503} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
 	EndGlobalSection
 EndGlobal

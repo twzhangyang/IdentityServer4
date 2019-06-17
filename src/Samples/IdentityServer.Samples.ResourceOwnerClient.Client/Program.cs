@@ -12,7 +12,7 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Client
         {
             var client = new HttpClient();
 
-            var disco = await client.GetDiscoveryDocumentAsync("http://localhost:5000");
+            var disco = await client.GetDiscoveryDocumentAsync("http://localhost:40110");
             if (disco.IsError)
             {
                 Console.WriteLine(disco.Error);
@@ -44,7 +44,7 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Client
             var apiClient = new HttpClient();
             apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-            var response = await apiClient.GetAsync("http://localhost:6034/identity");
+            var response = await apiClient.GetAsync("http://localhost:40100/identity");
             if (!response.IsSuccessStatusCode)
             {
                 Console.WriteLine(response.StatusCode);
