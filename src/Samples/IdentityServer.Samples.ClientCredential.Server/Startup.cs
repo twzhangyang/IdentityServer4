@@ -55,22 +55,20 @@ namespace IdentityServer.Samples.ClientCredential.Server
 
         private void LoadCert(IIdentityServerBuilder builder)
         {
-            var fileName = Path.Combine(Directory.GetCurrentDirectory(), "jedis-test-auth.pfx");
+            var fileName = Path.Combine(Directory.GetCurrentDirectory(), "jedis-prod-auth.pfx");
 
             if (!File.Exists(fileName))
             {
                 throw new FileNotFoundException("Signing Certificate is missing!");
             }
-//            var cert = new X509Certificate2(fileName, "123", X509KeyStorageFlags.Exportable | X509KeyStorageFlags.MachineKeySet);
-//            var bytes = cert.Export(X509ContentType.Pkcs12);
-//            var base64 = Convert.ToBase64String(bytes);
-
-
-            var value = _configuration["Cert"];
-            var bytes = Convert.FromBase64String(value);
-            var cert = new X509Certificate2(bytes,"123", X509KeyStorageFlags.MachineKeySet);
-
+            var cert = new X509Certificate2(fileName, "123");
             builder.AddSigningCredential(cert);
+
+//            var value = _configuration["Cert"];
+//            var bytes = Convert.FromBase64String(value);
+//            var coll = new X509Certificate2Collection();
+//            coll.Import(bytes, null, X509KeyStorageFlags.Exportable);
+//            builder.AddSigningCredential(coll[0]);
         }
 
         public void Configure(IApplicationBuilder app)
