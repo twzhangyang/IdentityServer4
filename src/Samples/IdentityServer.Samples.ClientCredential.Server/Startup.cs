@@ -10,16 +10,19 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IdentityServer.Samples.ClientCredential.Server
 {
     public class Startup
     {
+        private readonly IConfiguration _configuration;
         public IHostingEnvironment Environment { get; }
 
-        public Startup(IHostingEnvironment environment)
+        public Startup(IHostingEnvironment environment, IConfiguration configuration)
         {
+            _configuration = configuration;
             Environment = environment;
         }
 
@@ -52,16 +55,20 @@ namespace IdentityServer.Samples.ClientCredential.Server
 
         private void LoadCert(IIdentityServerBuilder builder)
         {
-//            var fileName = Path.Combine(Directory.GetCurrentDirectory(), "example.pfx");
             var fileName = Path.Combine(Directory.GetCurrentDirectory(), "jedis-test-auth.pfx");
 
             if (!File.Exists(fileName))
             {
                 throw new FileNotFoundException("Signing Certificate is missing!");
             }
+//            var cert = new X509Certificate2(fileName, "123", X509KeyStorageFlags.Exportable | X509KeyStorageFlags.MachineKeySet);
+//            var bytes = cert.Export(X509ContentType.Pkcs12);
+//            var base64 = Convert.ToBase64String(bytes);
 
-//            var cert = new X509Certificate2(fileName, "Password1");
-            var cert = new X509Certificate2(fileName, "123");
+
+            var value = _configuration["Cert"];
+            var bytes = Convert.FromBase64String(value);
+            var cert = new X509Certificate2(bytes,"123", X509KeyStorageFlags.MachineKeySet);
 
             builder.AddSigningCredential(cert);
         }
