@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using IdentityModel.Client;
+using IdentityServer4;
 using Newtonsoft.Json.Linq;
 
 namespace IdentityServer.Samples.ResourceOwnerClient.Client
@@ -19,6 +20,7 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Client
                 return;
             }
 
+            var offline = IdentityServerConstants.StandardScopes.OfflineAccess;
             // request token
             var tokenResponse = await client.RequestPasswordTokenAsync(new PasswordTokenRequest
             {
@@ -28,7 +30,7 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Client
 
                 UserName = "alice",
                 Password = "password",
-                Scope = "api2"
+                Scope = "api2 api1 offline_access"
             });
 
             if (tokenResponse.IsError)

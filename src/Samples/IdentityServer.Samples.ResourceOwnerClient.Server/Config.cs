@@ -3,6 +3,7 @@
 
 
 using System.Collections.Generic;
+using IdentityServer4;
 using IdentityServer4.Models;
 using IdentityServer4.Test;
 
@@ -71,12 +72,13 @@ namespace IdentityServer.Samples.ResourceOwnerClient.Server
                 {
                     ClientId = "ro.client",
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
-
+                    RefreshTokenUsage = TokenUsage.OneTimeOnly,
+                    AllowOfflineAccess = true,
                     ClientSecrets =
                     {
                         new Secret("secret".Sha256())
                     },
-                    AllowedScopes = { "api1", "api2" }
+                    AllowedScopes = { "api1", "api2", IdentityServerConstants.StandardScopes.OfflineAccess}
                 }
             };
         }
