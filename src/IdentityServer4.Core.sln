@@ -39,6 +39,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.Hybr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer.Samples.HybridFlow.MvcClient", "Samples\IdentityServer.Samples.HybridFlow.MvcClient\IdentityServer.Samples.HybridFlow.MvcClient.csproj", "{6E550B5A-E9A7-454C-8218-B536FABEB503}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentitySerer.Samples.Dynamodb.Tests", "Samples\IdentitySerer.Samples.Dynamodb.Tests\IdentitySerer.Samples.Dynamodb.Tests.csproj", "{D0754EBA-C026-42A9-B5FA-31DE104A496F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.EntityFramework.Storage", "EntityFramework.Storage\src\IdentityServer4.EntityFramework.Storage.csproj", "{6201AEC7-5164-42CF-85EA-13047050058D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.EntityFramework", "EntityFramework\src\IdentityServer4.EntityFramework.csproj", "{DBC396CB-6711-4B86-AE0E-A72D3D270108}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +103,18 @@ Global
 		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E550B5A-E9A7-454C-8218-B536FABEB503}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0754EBA-C026-42A9-B5FA-31DE104A496F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0754EBA-C026-42A9-B5FA-31DE104A496F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0754EBA-C026-42A9-B5FA-31DE104A496F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0754EBA-C026-42A9-B5FA-31DE104A496F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6201AEC7-5164-42CF-85EA-13047050058D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6201AEC7-5164-42CF-85EA-13047050058D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6201AEC7-5164-42CF-85EA-13047050058D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6201AEC7-5164-42CF-85EA-13047050058D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,5 +137,6 @@ Global
 		{3EC38586-023D-46B0-96BC-9E952C3D0245} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
 		{664D6ABE-637C-4347-8A89-90F3BB1E023A} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
 		{6E550B5A-E9A7-454C-8218-B536FABEB503} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
+		{D0754EBA-C026-42A9-B5FA-31DE104A496F} = {BD9833C7-3B1D-49AD-BCE0-B4C827411ADF}
 	EndGlobalSection
 EndGlobal
