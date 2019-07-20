@@ -11,7 +11,9 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\..\EntityFramework\src\IdentityServer4.EntityFramework.csproj" />
       <ProjectReference Include="..\..\IdentityServer4\src\IdentityServer4.csproj" />
+      <ProjectReference Include="..\IdentityServer4.AmazonDynamoDB.Storage\IdentityServer4.AmazonDynamoDB.Storage.csproj" />
     </ItemGroup>
 
 </Project>

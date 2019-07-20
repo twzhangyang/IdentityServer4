@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.EntityFrame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.EntityFramework", "EntityFramework\src\IdentityServer4.EntityFramework.csproj", "{DBC396CB-6711-4B86-AE0E-A72D3D270108}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.AmazonDynamoDB.Storage", "Samples\IdentityServer4.AmazonDynamoDB.Storage\IdentityServer4.AmazonDynamoDB.Storage.csproj", "{84472793-933C-48CD-A39A-2BAF0A275C14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityServer4.AmazonDynamoDB.Storage.Tests", "Samples\IdentityServer4.AmazonDynamoDB.Storage.Tests\IdentityServer4.AmazonDynamoDB.Storage.Tests.csproj", "{C3E36E8C-9212-4806-905B-07C52993896B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -115,6 +119,14 @@ Global
 		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC396CB-6711-4B86-AE0E-A72D3D270108}.Release|Any CPU.Build.0 = Release|Any CPU
+		{84472793-933C-48CD-A39A-2BAF0A275C14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{84472793-933C-48CD-A39A-2BAF0A275C14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{84472793-933C-48CD-A39A-2BAF0A275C14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{84472793-933C-48CD-A39A-2BAF0A275C14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C3E36E8C-9212-4806-905B-07C52993896B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3E36E8C-9212-4806-905B-07C52993896B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3E36E8C-9212-4806-905B-07C52993896B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3E36E8C-9212-4806-905B-07C52993896B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -138,5 +150,7 @@ Global
 		{664D6ABE-637C-4347-8A89-90F3BB1E023A} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
 		{6E550B5A-E9A7-454C-8218-B536FABEB503} = {4F06CD58-3D01-4B2A-A456-B1EC5FA15C6A}
 		{D0754EBA-C026-42A9-B5FA-31DE104A496F} = {BD9833C7-3B1D-49AD-BCE0-B4C827411ADF}
+		{84472793-933C-48CD-A39A-2BAF0A275C14} = {BD9833C7-3B1D-49AD-BCE0-B4C827411ADF}
+		{C3E36E8C-9212-4806-905B-07C52993896B} = {BD9833C7-3B1D-49AD-BCE0-B4C827411ADF}
 	EndGlobalSection
 EndGlobal
